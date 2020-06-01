@@ -17,6 +17,6 @@ The exercises are in the the `__workshop` folder.
 
 🚨 It wil be better to **not** look at the solutions.
 
-If you get stuck, it will be better to see a TC.
+If you get stuck, see a TC.
 
-The solution is a complete solution to _all_ of the questions and looking at it before you finish might confuse more than help you.
+The solution is a complete solution to _all_ of the questions and looking at it before you finish might confuse you rather than help you.
