@@ -1,5 +1,10 @@
 <%- include('../partials/header') %> 
 
-
+<ul>
+<% top50.forEach(song => { %>
+  <% const { rank, title } = song %>
+  <li><%= `Rank ${rank}. ${title}` %></li>
+<% }) %>
+</ul>
 
 <%- include('../partials/footer') %> 
