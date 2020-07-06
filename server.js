@@ -3,6 +3,7 @@
 const express = require('express')
 const morgan = require('morgan');
 const { top50 } = require('./data/top50');
+const handlers = require('./public/js/handlers')
 
 const PORT = process.env.PORT || 8000;
 
@@ -15,13 +16,20 @@ app.set('view engine', 'ejs');
 
 // endpoints here
 app.get('/top50', (req, res) => {
-    res.render('pages/top50', 
-    { 
+    res.render('pages/top50', { 
         title: 'Top 50 Songs Streamed on Spotify',
-        top50
+        songs: top50
     })
 })
 
+app.get('/top50/popular-artist', (req, res) => {
+    const popularArtist = handlers.getPopularArtist(top50)
+
+    res.render('pages/top50', {
+        title: 'Most Popular Artist',
+        songs: popularArtist
+    })
+})
 
 app.get('/', (req, res) => {
     res.render('pages/', { title: 'Home' })
