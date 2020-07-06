@@ -5,19 +5,19 @@
 1. Open a terminal window and type `yarn install`
 2. Start up the server by typing `yarn dev`
 
+## Stuck?
+
+🚨 In this workshop it is best **NOT** look at the solutions. If you get stuck, see a TC.
+
 ## Workshop
 
-⚠️ Before you start the exercises, you will have to fix the server, I think. Somehow, things got a little messed up and it won't run until the bugs are squashed.
+⚠️ Before you start the exercises, **you will have to fix the server**, I think. Somehow, things got a little messed up and it won't run until the bugs are squashed.
 
 <img src='https://media3.giphy.com/media/BxWTWalKTUAdq/giphy.gif' />
 
-## Getting stuck?
-
-🚨 It wil be better to **not** look at the solutions. If you get stuck, see a TC.
-
 ---
 
-## Exercise 1
+## Exercise 1 - Top 50 Songs (not from this year, or even last year)
 
 ### 1.1
 
@@ -71,7 +71,7 @@ Time to style the `<li>`s to be a little more readable / presentable.
 
 ![](__lecture/assets/top50_1.4.png)
 
-### 1.5 (Hard... remember the desserts)
+### 1.5 (Hard - Stretch)
 
 - Create a new endpoint `/top50/popular-artist`
 - create a function that will render the songs of the most popular artist on the list.
@@ -105,7 +105,7 @@ Once fixed, it should show us the 404 page instead of breaking.
 
 ![](__lecture/assets/top50_1.7.png)
 
-### 1.8 (Optional)
+### 1.8
 
 - Add arrows, buttons, or anything you like to the individual song pages that enable user to quickly navigate the list. e.g. If I am on song rank #22, clicking 'next' will take me to song rank #23, etc.
 

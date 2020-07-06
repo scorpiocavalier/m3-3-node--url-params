@@ -1,0 +1,38 @@
+.song {
+  border-bottom: 1px solid #808080;
+  display: flex;
+  padding: 6px 0;
+}
+
+.song__rank {
+  flex: 0 0 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.song__rank--num {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.song__rank--stream-count {
+  font-size: 10px;
+  margin-top: -12px;
+}
+
+.song__rank__info {
+  flex: 1 0 auto;
+}
+.song__rank__info--title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.song__rank__info--artist {
+  font-style: italic;
+}
+
+.song__rank__info--pub-date {
+  font-size: 12px;
+  text-align: right;
+}
