@@ -2,13 +2,27 @@
 
 <% const index = number - 1 %>
 <% const song = songs[index] %> 
-<% const { rank, title, artist, streams } = song %>
+<% let { rank, title, artist, streams } = song %>
 
 <section class='single-song-section'>
+  <div class="previous">
+    <% if(rank > 1) { %> 
+    <a href=<%= `/top50/song/${rank - 1}` %>>
+      <i class="fas fa-arrow-circle-left fa-8x"></i>
+    </a>
+    <% } %> 
+  </div>
   <div class="song-box">
     <span class="title"><%= title %></span>
     <span class="artist"><%= artist %></span>
     <span class="streams"><%= streams %></span>
+  </div>
+  <div class="next">
+    <% if(rank < 50) { %> 
+    <a href=<%= `/top50/song/${rank + 1}` %>>
+      <i class="fas fa-arrow-circle-right fa-8x"></i>
+    </a>
+    <% } %> 
   </div>
 </section>
 
