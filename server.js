@@ -56,7 +56,17 @@ app.get('/books', (req, res) => {
     })
 })
 
-app.get('/books/:id', (req, res) => {
+app.get('/books/type/:type', (req, res) => {
+    const { type } = req.params
+    const booksByType = handlers.getBooksByType(books, type)
+
+    res.render('pages/books', {
+        title: `${type} Books`,
+        books: booksByType
+    })
+})
+
+app.get('/books/book/:id', (req, res) => {
     const { id } = req.params
     if(id > 100 && id <= 125)
         res.status(200)
@@ -71,16 +81,6 @@ app.get('/books/:id', (req, res) => {
                 title: 'I got nothing',
                 path: req.originalUrl
             })
-})
-
-app.get('/books/:type', (req, res) => {
-    const { type } = req.params
-    const booksByType = handlers.getBooksByType(books, type)
-
-    res.render('pages/books', {
-        title: `${type} Books`,
-        books: booksByType
-    })
 })
 
 app.get('/', (req, res) => {
