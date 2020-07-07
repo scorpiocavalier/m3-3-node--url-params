@@ -14,4 +14,8 @@ const getPopularArtist = songs => {
   return songsWithCount.filter(song => song.count === highestCount)
 }
 
-module.exports = { getPopularArtist }
+const getBooksByType = (books, type) => {
+  return books.filter(book => book.type === type)
+}
+
+module.exports = { getPopularArtist, getBooksByType }

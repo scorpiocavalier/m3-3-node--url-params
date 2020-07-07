@@ -1,0 +1,12 @@
+<ul class='book-section'>
+  <% books.forEach(book => { %>
+    <% const { id, type, imgUrl, title, author, description } = book %>
+    <li class='book'>
+      <img class="book-cover" src=<%= imgUrl %> alt=<%= title %>>
+      <div class="book-info">
+        <span class="book-title"><%= title %></span>
+        <span class="book-author"><%= author %></span>
+      </div>
+    </li>
+  <% }) %>
+  </ul>

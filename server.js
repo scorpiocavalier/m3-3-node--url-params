@@ -3,6 +3,7 @@
 const express = require('express')
 const morgan = require('morgan')
 const { top50 } = require('./data/top50')
+const { books } = require('./data/books')
 const handlers = require('./public/js/handlers')
 
 const PORT = process.env.PORT || 8000
@@ -32,7 +33,7 @@ app.get('/top50/popular-artist', (req, res) => {
 })
 
 app.get('/top50/song/:number', (req, res) => {
-    const number = req.params.number
+    const { number } = req.params
     if(number > 0 && number <= 50)
         res.status(200)
             .render('pages/singleSong', { 
@@ -46,6 +47,40 @@ app.get('/top50/song/:number', (req, res) => {
                 title: 'I got nothing',
                 path: req.originalUrl
             })
+})
+
+app.get('/books', (req, res) => {
+    res.render('pages/books', { 
+        title: 'All Books',
+        books
+    })
+})
+
+app.get('/books/:id', (req, res) => {
+    const { id } = req.params
+    if(id > 100 && id <= 125)
+        res.status(200)
+            .render('pages/singleBook', { 
+                title: `Book #${id}`,
+                books,
+                id
+            })
+    else
+        res.status(404)
+            .render('pages/fourOhFour', {
+                title: 'I got nothing',
+                path: req.originalUrl
+            })
+})
+
+app.get('/books/:type', (req, res) => {
+    const { type } = req.params
+    const booksByType = handlers.getBooksByType(books, type)
+
+    res.render('pages/books', {
+        title: `${type} Books`,
+        books: booksByType
+    })
 })
 
 app.get('/', (req, res) => {

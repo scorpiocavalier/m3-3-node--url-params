@@ -1,0 +1,32 @@
+<%- include('../partials/header') %> 
+
+<% const index = id - 101 %>
+<% const book = books[index] %>
+<% let { type, imgUrl, title, author, description } = book %>
+
+<section class='single-book-section'>
+  <div class="previous">
+    <% if(id > 101) { %> 
+    <a href=<%= `/books/${id - 1}` %>>
+      <i class="fas fa-arrow-circle-left fa-8x"></i>
+    </a>
+    <% } %> 
+  </div>
+  <div class="single-book">
+    <img class='book-image' src=<%= imgUrl %> alt=<%= title %>>
+    <div class="book-details">
+      <span class="book-title"><%= title %></span>
+      <span class="book-author"><%= author %></span>
+      <span class="book-description"><%= description %></span>
+    </div>
+  </div>
+  <div class="next">
+    <% if(id < 125) { %> 
+    <a href=<%= `/books/${Number(id) + 1}` %>>
+      <i class="fas fa-arrow-circle-right fa-8x"></i>
+    </a>
+    <% } %> 
+  </div>
+</section>
+
+<%- include('../partials/footer') %> 
