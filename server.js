@@ -31,6 +31,15 @@ app.get('/top50/popular-artist', (req, res) => {
     })
 })
 
+app.get('/top50/song/:number', (req, res) => {
+    const number = req.params.number
+    res.render('pages/singleSong', { 
+        title: `Song #${number}`,
+        songs: top50,
+        number 
+    })
+})
+
 app.get('/', (req, res) => {
     res.render('pages/', { title: 'Home' })
 })

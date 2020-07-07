@@ -1,0 +1,15 @@
+<%- include('../partials/header') %> 
+
+<% const index = number - 1 %>
+<% const song = songs[index] %> 
+<% const { rank, title, artist, streams } = song %>
+
+<section class='single-song-section'>
+  <div class="song-box">
+    <span class="title"><%= title %></span>
+    <span class="artist"><%= artist %></span>
+    <span class="streams"><%= streams %></span>
+  </div>
+</section>
+
+<%- include('../partials/footer') %> 

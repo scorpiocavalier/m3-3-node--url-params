@@ -1,1 +1,35 @@
-/* song page css */
+.single-song-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-song-section .song-box {
+  box-shadow: 2px 2px 15px 1px lightslategray;
+  width: 400px;
+  height: 400px;
+  margin: 5em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+}
+
+.single-song-section .title {
+  font-size: 35px;
+  border-bottom: 1px solid lightslategray;
+  padding: 15px 0;
+  flex-basis: 15%;
+}
+
+.single-song-section .artist {
+  font-size: 16px;
+  flex-basis: 15%;
+  padding: 15px 0;
+}
+
+.single-song-section .streams {
+  font-size: 150px;
+  flex-basis: 70%;
+  opacity: 30%;
+}
