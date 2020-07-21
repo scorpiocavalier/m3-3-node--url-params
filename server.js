@@ -17,7 +17,7 @@ app.set('view engine', 'ejs')
 
 // endpoints here
 app.get('/top50', (req, res) => {
-    res.render('pages/top50', { 
+    res.render('pages/top50', {
         title: 'Top 50 Songs Streamed on Spotify',
         songs: top50
     })
@@ -36,7 +36,7 @@ app.get('/top50/song/:number', (req, res) => {
     const { number } = req.params
     if(number > 0 && number <= 50)
         res.status(200)
-            .render('pages/singleSong', { 
+            .render('pages/singleSong', {
                 title: `Song #${number}`,
                 songs: top50,
                 number
@@ -50,7 +50,7 @@ app.get('/top50/song/:number', (req, res) => {
 })
 
 app.get('/books', (req, res) => {
-    res.render('pages/books', { 
+    res.render('pages/books', {
         title: 'All Books',
         books
     })
@@ -70,7 +70,7 @@ app.get('/books/book/:id', (req, res) => {
     const { id } = req.params
     if(id > 100 && id <= 125)
         res.status(200)
-            .render('pages/singleBook', { 
+            .render('pages/singleBook', {
                 title: `Book #${id}`,
                 books,
                 id
@@ -84,7 +84,7 @@ app.get('/books/book/:id', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-    res.render('pages/', { title: 'Home' })
+    res.send('Homepage')
 })
 
 // handle 404s
